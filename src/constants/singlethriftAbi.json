@@ -1,0 +1,459 @@
+[
+  {
+    "type": "fallback",
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "receive",
+    "stateMutability": "payable"
+  },
+  {
+    "type": "function",
+    "name": "Admin",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "PeriodLeft",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "calculateSavingsSchedule",
+    "inputs": [
+      {
+        "name": "totalTargetAmount",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "startTime",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "endTime",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "frequency",
+        "type": "uint8",
+        "internalType": "enum SingleThriftUp.SavingsFrequency"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "totalPeriods",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "amountPerPeriod",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "periodDuration",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "creator",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "emergencyFee",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "emergencyWithdrawal",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getIndividualGoal",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "goal",
+        "type": "tuple",
+        "internalType": "struct SingleThriftUp.IndividualGoal",
+        "components": [
+          {
+            "name": "goalCreator",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "currency",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "goalId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "goalName",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "goalAmount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "amountSaved",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "amountPerPeriod",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "goalAchieved",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "startime",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "endtime",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "lasttimeSaved",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "savingFrequency",
+            "type": "uint8",
+            "internalType": "enum SingleThriftUp.SavingsFrequency"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "individualGoals",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "goalCreator",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "currency",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "goalId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "goalName",
+        "type": "string",
+        "internalType": "string"
+      },
+      {
+        "name": "goalAmount",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "amountSaved",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "amountPerPeriod",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "goalAchieved",
+        "type": "bool",
+        "internalType": "bool"
+      },
+      {
+        "name": "startime",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "endtime",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "lasttimeSaved",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "savingFrequency",
+        "type": "uint8",
+        "internalType": "enum SingleThriftUp.SavingsFrequency"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "initialize",
+    "inputs": [
+      {
+        "name": "_goalName",
+        "type": "string",
+        "internalType": "string"
+      },
+      {
+        "name": "_goalAmount",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "_goalId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "_savingFrequency",
+        "type": "uint8",
+        "internalType": "enum SingleThriftUp.SavingsFrequency"
+      },
+      {
+        "name": "currency",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_startTime",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "_endTime",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "_platformFee",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "_emergencyFee",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "_creator",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_thriftUp",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_participant",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "nextSavingTime",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "nextTime",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "currentPeriod",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "platformFee",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "saveForGoal",
+    "inputs": [
+      {
+        "name": "userAddr",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "totalUsers",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "withdraw",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "error",
+    "name": "Achieved",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "AddressZero",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "AlreadyInitialized",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "EmptyAssetName",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Invalid",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidAmount",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidAssetOwner",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidTime",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotAchieved",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotAdmin",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotCreator",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotVerified",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "SafeERC20FailedOperation",
+    "inputs": [
+      {
+        "name": "token",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  }
+]

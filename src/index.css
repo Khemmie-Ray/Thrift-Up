@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6138FE;
+  --color-lilac: #9346FF;
+  --color-fadedwhite: #E9E3FF;
+  --color-dark: #101336;
+  --color-darker: #080A29;
+  --color-grey: #5E6074;
+  --color-lightPurple: #F9F8FF;
+  --color-lightgray: #BDBDBD;
+  --color-textGrey: #C1C2CA;
+  --font-dmsans: "DM Sans", "serif"; 
+}
+
+.hero-section {
+  background-image: url("./assets/Looper-t.svg"), url("./assets/Looper-b.svg");
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
+  background-size: 150px, 150px;
+}
+
+.dropdown-enter {
+  animation:  0.6s ease-out forwards;
+}
+
+.dropdown-exit {
+  animation:  0.6s ease-in forwards;
+}
+
+@media (max-width: 660px) {
+  .hero-section {
+    background-image: url("./assets/Looper-t.svg"), url("./assets/Looper-b.svg");
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    background-size: 90px, 90px;
+  }
+}
+
+.custom-range {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(to right, #6138FE var(--progress), #D1D5DB var(--progress)); 
+  outline: none;
+  transition: background 0.3s ease-in-out;
+}
+
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0px;
+  height: 0px;
+}
+
+.custom-range::-moz-range-thumb {
+  appearance: none;
+  width: 0px;
+  height: 0px;
+}
+
+.custom-range:focus {
+  outline: none;
+}
+
+.contain {
+  max-width: 1800px;
+}

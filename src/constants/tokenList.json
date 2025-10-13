@@ -1,0 +1,20 @@
+{
+    "0x323e78f944A9a1FcF3a10efcC5319DBb0bB6e673": {
+        "name": "USDT",
+        "symbol": "USDT",
+        "decimals": 6,
+        "address": "0x323e78f944A9a1FcF3a10efcC5319DBb0bB6e673"
+    },
+    "0x220171b3F1883a21e29B4A8A53D15ce55e0E720c": {
+        "name": "DAI",
+        "symbol": "DAI",
+        "decimals": 18,
+        "address": "0x220171b3F1883a21e29B4A8A53D15ce55e0E720c"
+    },
+    "0x036CbD53842c5426634e7929541eC2318f3dCF7e": {
+        "name": "USDC",
+        "symbol": "USDC",
+        "decimals": 6,
+        "address": "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
+    }
+}
