@@ -56,3 +56,16 @@ export const ContentTab = ({ tabs }) => {
   </TabGroup>
   );
 };
+
+export const getReadableDate = (timestamp, options = {}) => {
+  if (!timestamp) return "-";
+  const date = new Date(Number(timestamp) * 1000);
+
+  return date.toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    ...options,
+  });
+};
+

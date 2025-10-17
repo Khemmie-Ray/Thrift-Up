@@ -83,7 +83,7 @@ const IndividualSavingsDetail = () => {
           <h2 className="lg:text-[28px] md:text-[28px] text-[20px] font-[600]">
             {selectedGoal.title}
           </h2>
-          <NextTime thriftAddress={thriftAddress} />
+          <NextTime thriftAddress={thriftAddress} end={selectedGoal.endDate} />
         </div>
         <div className="flex items-center">
           <div className="1/5">
