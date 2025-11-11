@@ -16,5 +16,11 @@
         "symbol": "USDC",
         "decimals": 6,
         "address": "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
-    }
+    },
+    "0xE984D41286055e5a566D8Ca2c8F9E389c3323724": {
+        "name": "MockToken",
+        "symbol": "MTK",
+        "decimals": 18,
+        "address": "0xE984D41286055e5a566D8Ca2c8F9E389c3323724"
+    } 
 }
