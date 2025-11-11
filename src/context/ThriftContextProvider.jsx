@@ -106,6 +106,7 @@ export const ThriftContextProvider = ({ children }) => {
         allGroup,
         groupUser,
         singleUser,
+        refetch: fetchThrifts,
       }}
     >
       {children}
