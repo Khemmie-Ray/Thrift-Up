@@ -40,7 +40,6 @@ const NextTime = ({ thriftAddress, end }) => {
       const remaining = nextTime - now;
       const endTime = Number(end);
 
-      // Case 1: Countdown still running
       if (remaining > 0) {
         const days = Math.floor(remaining / 86400);
         const hours = Math.floor((remaining % 86400) / 3600);
@@ -55,7 +54,6 @@ const NextTime = ({ thriftAddress, end }) => {
         handleFetchTime(); 
       }
 
-      // Case 3: End date reached
       if (now >= endTime) {
         setIsEnded(true);
         setCountdown("Savings period ended");

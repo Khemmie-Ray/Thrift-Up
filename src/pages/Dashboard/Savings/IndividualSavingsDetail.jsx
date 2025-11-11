@@ -28,6 +28,8 @@ const IndividualSavingsDetail = () => {
     (item) => item.goalId === Number(id)
   );
 
+  console.log(selectedGoal)
+
   const getTokenDecimals = (currencyAddress) => {
     const token = tokenList[currencyAddress];
     return token?.decimals || 18;
