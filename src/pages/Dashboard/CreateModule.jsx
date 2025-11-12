@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import tokenList from "../../constants/tokenList.json";
 import { useNavigate } from "react-router";
 import ButtonSpinner from "../../components/loaders/ButtonSpinner";
+import { useThriftData } from "../../context/ThriftContextProvider";
 
 const CreateModule = () => {
   const [goalName, setGoalName] = useState("");
@@ -19,22 +20,11 @@ const CreateModule = () => {
   const [loading, setloading] = useState(false);
 
   const handleCreate = useCreateThrift();
+  const { refetch } = useThriftData();
 
   const handleCreateThrift = async () => {
-    const startDate = Math.floor(new Date(startTime).getTime() / 1000);
+    const startDate = Math.floor(Date.now() / 1000) + 100;
     const endDate = Math.floor(new Date(endTime).getTime() / 1000);
-    // const selected = new Date(startTime);
-    // selected.setHours(0, 0, 0, 0);
-
-    // const today = new Date();
-    // today.setHours(0, 0, 0, 0);
-
-    // if (selected < today) {
-    //   toast.error("Start time cannot be in the past", {
-    //     position: "top-center",
-    //   });
-    //   return;
-    // }
 
     if (startDate <= Math.floor(Date.now() / 1000)) {
       toast.error("Start time cannot be in the past", {
@@ -63,7 +53,7 @@ const CreateModule = () => {
       goalAmount,
       selectedToken.decimals
     );
-    await handleCreate(
+    let success = await handleCreate(
       goalName,
       goalAmountInWei.toString(),
       savingFrequency,
@@ -72,6 +62,14 @@ const CreateModule = () => {
       endDate,
       participant
     );
+
+    try {
+      if (success && typeof refetch === "function") {
+        await refetch();
+      }
+    } catch (e) {
+      console.error("Refetch after create failed", e);
+    }
     setGoalAmount("");
     setGoalName("");
     setParticipant(0);
@@ -82,6 +80,7 @@ const CreateModule = () => {
     setloading(false);
     navigate("/dashboard/individual-savings");
   };
+
 
   return (
     <div>
