@@ -106,7 +106,8 @@ const useFetchIndividual = () => {
   return {
     singleThriftAll,
     singleThriftUser,
-    loading
+    loading,
+    refetch: fetchSingle,
   };
 };
 
