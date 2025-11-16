@@ -80,6 +80,7 @@ const CreatedGroup = () => {
               </p>
               <Link
                 to={`/dashboard/group-savings/${info.goalId}`}
+              state={{ thriftAddress: info.address }} 
                 className="flex justify-center items-center text-center border rounded-full border-primary p-2 text-[12px] w-[100%] mb-3"
               >
                 View Details
