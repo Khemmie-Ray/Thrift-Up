@@ -68,4 +68,3 @@ export const getReadableDate = (timestamp, options = {}) => {
     ...options,
   });
 };
-
