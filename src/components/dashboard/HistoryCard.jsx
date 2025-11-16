@@ -58,6 +58,12 @@ const HistoryCard = () => {
         const percent = (parseFloat(info.saved) / parseFloat(info.goal)) * 100;
         const start = getReadableDate(info.startDate);
         const end = getReadableDate(info.endDate);
+        const currencyAddress = info.currency;
+        const tokenInfo = tokenList[currencyAddress];
+      
+        const currency = tokenInfo
+          ? `${tokenInfo.symbol}`
+          : "Unknown Token";
 
         return (
           <div className="flex items-center justify-between w-[100%] mx-auto mb-3" key={info.goalId}>
@@ -68,7 +74,7 @@ const HistoryCard = () => {
               <h3 className="text-[14px] font-[600]">{info.title}</h3>
 
               <p className="text-[14px] text-grey">
-                ${saved} / <span>${goal}</span>
+                {saved} / <span>{goal} {currency}</span>
               </p>
 
               <input

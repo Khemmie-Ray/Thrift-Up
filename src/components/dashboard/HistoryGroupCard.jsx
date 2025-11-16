@@ -100,7 +100,7 @@ const HistoryGroupCard = () => {
             </div>
             <Link
               to={`/dashboard/group-savings/${info.goalId}`} 
-              state={{ address: info.address }} 
+              state={{ thriftAddress: info.address }} 
               className="flex justify-center items-center text-center border rounded-full border-primary p-2 text-[12px] lg:w-[25%] md:w-[25%] w-[100%] mb-3"
             >
               View Details
