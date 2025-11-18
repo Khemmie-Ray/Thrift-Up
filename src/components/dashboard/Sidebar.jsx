@@ -8,11 +8,9 @@ import DropdownNavLink from "./DropdownNavLink";
 import { RxCountdownTimer } from "react-icons/rx";
 import { RiSettings5Line } from "react-icons/ri";
 import { BiLogOut } from "react-icons/bi";
-import { useDisconnect } from "@reown/appkit/react";
 
 const Sidebar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null); 
-  const { disconnect } = useDisconnect()
 
   const toggleDropdown = (dropdownName) => {
     setActiveDropdown((prev) => (prev === dropdownName ? null : dropdownName));
@@ -93,7 +91,7 @@ const Sidebar = () => {
       </div>
 
       <div className="mt-auto border-t border-[#303030]">
-        <button className="text-[14px] flex items-center p-4 py-6 text-red-600" onClick={disconnect}>
+        <button className="text-[14px] flex items-center p-4 py-6 text-red-600">
           <BiLogOut className="mr-2" size={12} />
           Log out
         </button>
