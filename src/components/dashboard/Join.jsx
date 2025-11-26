@@ -2,13 +2,13 @@ import { Button, Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { useState, useCallback } from "react";
 import { Contract, ethers } from "ethers";
 import { useAppKitAccount, useAppKitNetwork } from "@reown/appkit/react";
-import { coreTestnet2  } from "@reown/appkit/networks";
+import { hedera   } from "@reown/appkit/networks";
 import { toast } from "react-toastify";
 import { ErrorDecoder } from "ethers-decode-error";
 import abi from "../../constants/groupthriftAbi.json";
 import useSignerOrProvider from "../../hooks/useSignerOrProvider";
 
-const Join = ({ address }) => {
+const Join = ({ thriftAddress }) => {
   let [isOpen, setIsOpen] = useState(false);
   const [member, setMember] = useState("");
   const { isConnected } = useAppKitAccount();
@@ -24,7 +24,7 @@ const Join = ({ address }) => {
     setIsOpen(false);
   }
 
-  const contract = new ethers.Contract(address, abi, signer);
+  const contract = new ethers.Contract(thriftAddress, abi, signer);
 
   const handleJoin = useCallback(
     async () => {
@@ -43,7 +43,7 @@ const Join = ({ address }) => {
         return;
       }
 
-      if (Number(chainId) !== Number(coreTestnet2 .id)) {
+      if (Number(chainId) !== Number(hedera  .id)) {
         toast.error("You're not connected to Core Testnet2");
         return;
       }
@@ -70,7 +70,7 @@ const Join = ({ address }) => {
         close()
       }
     },
-    [contract, address, chainId]
+    [contract, thriftAddress, chainId]
   );
 
   return (
